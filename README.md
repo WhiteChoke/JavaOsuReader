@@ -14,6 +14,22 @@ You can read more about the structure of `.db` files in the wiki
 on the [Legacy database file structure](https://github.com/ppy/osu/wiki/Legacy-database-file-structure)
 section on the official osu! GitHub page.
 
+## Installation
+
+```kotlin
+repositories {
+    //...
+    maven { url = uri("https://jitpack.io") } // <-- jitpack repository
+}
+
+dependencies {
+    //...
+    implementation("com.github.WhiteChoke:JavaOsuReader:1.0") // <-- java osu reader depenadncy
+}
+```
+
+---
+
 ## Usage
 
 ```java
