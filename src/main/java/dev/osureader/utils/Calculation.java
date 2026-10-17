@@ -14,12 +14,12 @@ public class Calculation {
         return Math.pow(accuracy, 2);
     }
 
-    private static int calculateBpm(double bpm)
+    public static int calculateBpm(double bpm)
     {
         return (int)Math.ceil(60 * 1000 / bpm);
     }
 
-    private static Grade CalculateGrade(double accuracy, int n300, int n100, int n50, int nMiss)
+    public static Grade CalculateGrade(double accuracy, int n300, int n100, int n50, int nMiss)
     {
         var total = n300+n100+n100+nMiss;
 
