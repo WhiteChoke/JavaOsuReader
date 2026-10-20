@@ -2,6 +2,7 @@ package dev.osureader.model.osuDb;
 
 import dev.osureader.enums.UserPermissions;
 
+import java.util.EnumSet;
 import java.util.List;
 import java.util.StringJoiner;
 
@@ -13,7 +14,7 @@ public record OsuDbModel(
         String name,
         int beatmapNumber,
         List<OsuBeatmapModel> beatmaps,
-        UserPermissions userPermissions
+        EnumSet<UserPermissions> userPermissions
 ) {
     private OsuDbModel(Builder builder) {
         this(
@@ -40,9 +41,9 @@ public record OsuDbModel(
         private String name;
         private int beatmapNumber;
         private List<OsuBeatmapModel> beatmaps;
-        private UserPermissions userPermissions;
+        private EnumSet<UserPermissions> userPermissions;
 
-        public void setUserPermissions(UserPermissions userPermissions) {
+        public void setUserPermissions(EnumSet<UserPermissions> userPermissions) {
             this.userPermissions = userPermissions;
         }
 

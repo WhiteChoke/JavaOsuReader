@@ -1,5 +1,6 @@
 package dev.osureader.enums;
 
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,13 +31,13 @@ public enum UserPermissions {
         }
     }
 
-    public static UserPermissions fromValue(int value) {
-        var permissions = BY_VALUE.get(value);
-
-        if (permissions == null) {
-            throw new IllegalArgumentException("Unknown permissions value: " + value);
+    public static EnumSet<UserPermissions> fromValue(int mask) {
+        var result = EnumSet.noneOf(UserPermissions.class);
+        for (var p : values()) {
+            if ((mask & p.value) != 0) {
+                result.add(p);
+            }
         }
-
-        return permissions;
+        return result;
     }
 }
