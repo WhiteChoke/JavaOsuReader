@@ -4,14 +4,14 @@ import dev.osureader.enums.Grade;
 
 public class Calculation {
     public static double calculateAccuracy(int n300, int n100, int n50, int nMiss) {
-        double a = 300.0 * n300 + 100.0 * n100 + 50.0 * n50;
-        double b = 300.0 * (n300+n100+n100+nMiss);
+        double a = 300 * n300 + 100 * n100 + 50 * n50;
+        double b = 300 * (n300+n100+n50+nMiss);
 
         if (b == 0) return 0;
 
-        var accuracy = a / b * 100.0;
+        var accuracy = a / b * 100;
 
-        return Math.pow(accuracy, 2);
+        return Math.round(accuracy * 100) / 100.0;
     }
 
     public static int calculateBpm(double bpm)
